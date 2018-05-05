@@ -1,0 +1,256 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cabin', sans-serif;
+    box-sizing: border-box;
+    background-color: #eff1f2;
+}
+
+.logo__link {
+    text-decoration: none;
+    color: #2edf4c;
+    font-weight: bold;
+}
+
+.logo__link:hover {
+    color: #7fef92;
+
+}
+
+.header {
+    background-color: #2c3238;
+    padding: 10px 70px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo__title {
+    margin-bottom: 0;
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.logo__picture {
+    height: 55px;
+    width: auto;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.logo__describe {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    background-color: #464c51;
+    border: none;
+    height: 30px;
+    width: 200px;
+    border-radius: 2px;
+    outline: none;
+    padding: 2px 10px;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: 'Cabin', sans-serif;
+    font-size: 15px;
+}
+
+::placeholder {
+    color: #8d8f91;
+    font-family: 'Cabin', sans-serif;
+    font-size: 15px;
+}
+
+label {
+    background-color: #464c51;
+    display: inline-block;
+    border: none;
+    height: 30px;
+    width: 160px;
+    border-radius: 2px;
+    border-right: 1px solid #2c3238;
+    line-height: 30px;
+    text-align: center;
+    padding: 2px 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.users__title {
+    color: #2c3238;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.users__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.users__item {
+    width: 20%;
+    text-align: center;
+    margin: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.users__photo {
+    width: 180px;
+    border-radius: 4px;
+}
+
+.users__link--name {
+    color: #13992a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.users__link--photo {
+    position: relative;
+}
+
+.users__layer {
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+    border-radius: 4px;
+}
+
+.users__layer:hover {
+    background-color: rgba(19, 153, 42, .8);
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .users__item {
+        width: 30%;
+    }
+
+    .users__photo {
+        width: 230px;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .users__item {
+        width: 40%;
+    }
+
+    .users__photo {
+        width: 270px;
+    }
+
+    .users__link--name {
+        font-size: 22px;
+    }
+
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo__title {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 735px) {
+
+    .header__container {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    input {
+        height: 40px;
+        font-size: 20px;
+        width: 230px;
+    }
+
+    label {
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        width: 200px;
+    }
+    .header__logo {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .users__item {
+        width: 60%;
+    }
+
+    .users__photo {
+        width: 320px;
+    }
+
+    .users__link--name {
+        font-size: 25px;
+
+    }
+
+}
+
+@media (max-width: 490px) {
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 300px;
+        text-align: center;
+        border-top: 1px solid #2c3238;
+    }
+
+    label {
+        font-size: 20px;
+        width: 320px;
+    }
+
+    .logo__title {
+        font-size: 32px;
+    }
+}
