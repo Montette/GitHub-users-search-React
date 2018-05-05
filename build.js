@@ -19,7 +19,7 @@ var App = function (_React$Component) {
     _this.state = {
       searchText: '',
       users: [],
-      usersNumber: ''
+      submit: false
     };
     return _this;
   }
@@ -41,7 +41,7 @@ var App = function (_React$Component) {
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (responseJson) {
-        return _this2.setState({ users: responseJson.items, usersNumber: 'Found ' + responseJson.items.length + ' results for ' + _this2.state.searchText });
+        return _this2.setState({ users: responseJson.items, submit: true });
       });
     }
   }, {
@@ -106,11 +106,18 @@ var App = function (_React$Component) {
         React.createElement(
           'main',
           { className: 'users' },
-          React.createElement(
+          this.state.submit ? React.createElement(
             'h2',
             { className: 'users__title' },
-            this.state.usersNumber
-          ),
+            'Found ',
+            this.state.users.length,
+            ' results for ',
+            React.createElement(
+              'span',
+              { className: 'users__title--color' },
+              this.state.searchText
+            )
+          ) : null,
           React.createElement(UsersList, { users: this.state.users })
         )
       );

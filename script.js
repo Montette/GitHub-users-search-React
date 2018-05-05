@@ -5,7 +5,7 @@ class App extends React.Component {
     this.state = {
       searchText: '',
       users: [],
-      usersNumber: ''        
+      submit: false    
     };
   }
 
@@ -19,7 +19,7 @@ class App extends React.Component {
     const url = `https://api.github.com/search/users?q=${searchText}`;
     fetch(url)
       .then(response => response.json())
-      .then(responseJson => this.setState({users: responseJson.items, usersNumber: `Found ${responseJson.items.length} results for ${this.state.searchText}`}));
+      .then(responseJson => this.setState({users: responseJson.items, submit: true}));
   }
 
   render() {
@@ -44,7 +44,7 @@ class App extends React.Component {
         </div>
         </header>
         <main className='users'>
-            <h2 className='users__title'>{this.state.usersNumber}</h2>
+           {this.state.submit ? <h2 className='users__title'>Found {this.state.users.length} results for <span className='users__title--color'>{this.state.searchText}</span></h2> : null}
             <UsersList users={this.state.users}/>
         </main>
       </div>

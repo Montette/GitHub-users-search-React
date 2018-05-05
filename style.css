@@ -94,6 +94,10 @@ label {
     margin-top: 40px;
 }
 
+.users__title--color{
+    color: green;
+}
+
 .users__container {
     max-width: 1400px;
     margin: 0 auto;
