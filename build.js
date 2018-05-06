@@ -18,6 +18,7 @@ var App = function (_React$Component) {
 
     _this.state = {
       searchText: '',
+      foundText: '',
       users: [],
       submit: false
     };
@@ -37,11 +38,12 @@ var App = function (_React$Component) {
       event.preventDefault();
       var searchText = this.state.searchText;
 
+      var foundText = this.state.searchText.slice();
       var url = 'https://api.github.com/search/users?q=' + searchText;
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (responseJson) {
-        return _this2.setState({ users: responseJson.items, submit: true });
+        return _this2.setState({ users: responseJson.items, submit: true, foundText: foundText });
       });
     }
   }, {
@@ -115,7 +117,7 @@ var App = function (_React$Component) {
             React.createElement(
               'span',
               { className: 'users__title--color' },
-              this.state.searchText
+              this.state.foundText
             )
           ) : null,
           React.createElement(UsersList, { users: this.state.users })
